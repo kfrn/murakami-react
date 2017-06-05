@@ -6,6 +6,8 @@ import NavBar from './components/shared/NavBar'
 import NotFound from './components/NotFound'
 import Home from './components/Home'
 import About from './components/About'
+import BooksPage from './components/BooksPage'
+import Cart from './components/Cart'
 
 class App extends Component {
   render() {
@@ -17,6 +19,8 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/home" component={Home} />
             <Route path="/about" component={About} />
+            <Route exact path="/books" component={BooksPage} />
+            <Route path="/cart" component={Cart} />
             <Route path="*" component={NotFound} />
           </Switch>
           <Footer />

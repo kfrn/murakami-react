@@ -3,7 +3,7 @@ import React from 'react';
 const About = () => {
   return (
     <div className="container">
-      <h2>About Haruki Murakami</h2>
+      <h3>About Haruki Murakami</h3>
       <img className='portrait' src='./images/Murakami_portrait.jpg' alt="Portrait of Haruki Murakami"></img>
       <p>
         Haruki Murakami (村上 春樹 Murakami Haruki, January 12, 1949) is a Japanese writer. His books and stories have been bestsellers in Japan as well as internationally, with his work being translated into 50 languages and selling millions of copies outside his native country. The critical acclaim for his fiction and non-fiction has led to numerous awards, in Japan and internationally, including the World Fantasy Award (2006) and the Frank O'Connor International Short Story Award (2006). His oeuvre received, for example, the Franz Kafka Prize (2006) and the Jerusalem Prize (2009).
