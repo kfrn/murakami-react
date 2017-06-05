@@ -8,6 +8,7 @@ import Home from './components/Home'
 import About from './components/About'
 import BooksPage from './components/BooksPage'
 import Cart from './components/Cart'
+import SingleBook from './components/SingleBook'
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
             <Route path="/home" component={Home} />
             <Route path="/about" component={About} />
             <Route exact path="/books" component={BooksPage} />
+            <Route path="/books/:id" component={SingleBook} />
             <Route path="/cart" component={Cart} />
             <Route path="*" component={NotFound} />
           </Switch>
