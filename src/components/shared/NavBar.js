@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class NavBar extends Component {
   render() {
@@ -13,13 +13,13 @@ class NavBar extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <Link to="/" className="navbar-brand">Murakami books</Link>
+            <NavLink to="/" className="navbar-brand">Murakami books</NavLink>
           </div>
           <div className="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav">
-              <li><Link to="/about">About</Link> </li>
-              <li><Link to="/books">Books</Link> </li>
-              <li><Link to="/cart">Cart</Link> </li>
+              <li><NavLink to="/about" activeStyle={{color: '#001324', backgroundColor: '#f2deee'}}>About</NavLink> </li>
+              <li><NavLink to="/books" activeStyle={{color: '#001324', backgroundColor: '#f2deee'}}>Books</NavLink> </li>
+              <li><NavLink to="/cart" activeStyle={{color: '#001324', backgroundColor: '#f2deee'}}>Cart</NavLink> </li>
             </ul>
           </div>
         </div>
@@ -27,5 +27,12 @@ class NavBar extends Component {
     );
   }
 }
+
+/*li > a.active {
+  color: #001324;
+  background-color: #f2deee;
+}*/
+
+// activeStyle={{color: 'red', backgroundColor: 'black'}}
 
 export default NavBar;

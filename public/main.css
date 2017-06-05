@@ -8,6 +8,13 @@ body {
   padding: 0;
 }
 
+h1,
+h2,
+.entry,
+.error {
+  text-align: center;
+}
+
 #root {
   max-width: 100%;
 }
@@ -59,10 +66,10 @@ img {
   color: #FF00CC !important;
 }
 
-li > a.active {
+/*li > a.active {
   color: #001324;
   background-color: #f2deee;
-}
+}*/
 
 .navbar-default .navbar-toggle {
   border-color: #2D006A;
