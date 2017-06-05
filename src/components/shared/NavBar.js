@@ -1,38 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-class NavBar extends Component {
-  render() {
-    return (
-      <nav className="navbar navbar-default">
-        <div className="container-fluid">
-          <div className="navbar-header">
-            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span className="sr-only">Toggle navigation</span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-            </button>
-            <NavLink to="/" className="navbar-brand">Murakami books</NavLink>
-          </div>
-          <div className="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-            <ul className="nav navbar-nav">
-              <li><NavLink to="/about" activeStyle={{color: '#001324', backgroundColor: '#f2deee'}}>About</NavLink> </li>
-              <li><NavLink to="/books" activeStyle={{color: '#001324', backgroundColor: '#f2deee'}}>Books</NavLink> </li>
-              <li><NavLink to="/cart" activeStyle={{color: '#001324', backgroundColor: '#f2deee'}}>Cart</NavLink> </li>
-            </ul>
-          </div>
+const NavBar = () => {
+  return (
+    <nav className="navbar navbar-default">
+      <div className="container-fluid">
+        <div className="navbar-header">
+          <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span className="sr-only">Toggle navigation</span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
+          </button>
+          <NavLink to="/" className="navbar-brand">Murakami books</NavLink>
         </div>
-      </nav>
-    );
-  }
+        <div className="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+          <ul className="nav navbar-nav">
+            <li><NavLink to="/about" activeStyle={{color: '#001324', backgroundColor: '#f2deee'}}>About</NavLink> </li>
+            <li><NavLink to="/books" activeStyle={{color: '#001324', backgroundColor: '#f2deee'}}>Books</NavLink> </li>
+            <li><NavLink to="/cart" activeStyle={{color: '#001324', backgroundColor: '#f2deee'}}>Cart</NavLink> </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
 }
-
-/*li > a.active {
-  color: #001324;
-  background-color: #f2deee;
-}*/
-
-// activeStyle={{color: 'red', backgroundColor: 'black'}}
 
 export default NavBar;
