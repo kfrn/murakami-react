@@ -1,0 +1,169 @@
+/* BASICS */
+
+body {
+  color: #001324;
+  background-color: #FFFAEF;
+  font-family: 'Comfortaa', cursive;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  max-width: 100%;
+}
+
+.container {
+  margin: 0 1em;
+}
+
+h2 {
+  margin-top: 10px;
+}
+
+p {
+  color: #2D006A;
+}
+
+a {
+  color: #2D006A;
+}
+
+a:hover {
+  color: #FF00CC;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* NAV BAR */
+
+.navbar {
+  background-color: #ddc0d8;
+}
+
+.navbar-right {
+  padding: 0;
+}
+
+.nav.navbar-nav li a,
+.navbar-header > a {
+  color: #2D006A !important;
+}
+
+.nav.navbar-nav li a:hover,
+.navbar-header > a:hover {
+  color: #FF00CC !important;
+}
+
+li > a.active {
+  color: #001324;
+  background-color: #f2deee;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: #2D006A;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #2D006A;
+}
+
+.navbar-default .navbar-toggle:hover {
+  background-color: #f2deee;
+}
+
+/* FOOTER */
+
+footer {
+  margin-top: 2rem;
+}
+
+footer a {
+  color: #001324;
+  text-decoration: underline;
+}
+
+.navbar-static-bottom {
+  text-align: center;
+}
+
+/* FRONT PAGE */
+
+.attribution {
+  font-size: 0.8em;
+  text-align: right;
+}
+
+/* ABOUT PAGE */
+
+.portrait {
+  margin: 1em auto;
+}
+
+/* BOOKS PAGE */
+
+#books-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.book {
+  border: 1px solid #FF00CC;
+  border-radius: 8px;
+  padding: 0.5em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1%;
+  width: 99%;
+}
+
+.book > p {
+  margin: 0;
+  padding-top: 0.5em;
+}
+
+.book > img {
+  padding: 0.5em;
+}
+
+.booktitle {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.bookyear {
+  color: #001324;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (min-width: 600px) {
+  #root {
+    max-width: 70%;
+    margin: auto;
+  }
+  .book {
+    width: 48%;
+  }
+  .portrait {
+    max-width: 60%;
+    margin: 2rem auto;
+  }
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+@media only screen and (min-width: 960px) {
+  .book {
+    width: 23%;
+  }
+}
