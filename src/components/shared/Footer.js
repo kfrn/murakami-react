@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className='navbar-static-bottom'>
       <div className='container-fluid'>
-        <p className='text-muted'><Link to='https://github.com/kfrn/library-app'>source code</Link></p>
+        <p className='footer-text'><Link to='https://github.com/kfrn/library-app'>source code</Link></p>
       </div>
     </footer>
   );

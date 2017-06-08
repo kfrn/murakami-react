@@ -21,7 +21,7 @@ class App extends Component {
             <Route path="/home" component={Home} />
             <Route path="/about" component={About} />
             <Route exact path="/books" component={BooksPage} />
-            <Route path="/books/:id" component={SingleBook} />
+            <Route exact path="/books/:id" component={SingleBook} />
             <Route path="/cart" component={Cart} />
             <Route path="*" component={NotFound} />
           </Switch>
@@ -33,19 +33,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-// <Router>
-//   <div className="router">
-//     <NavBar />
-//     <Switch>
-//       <Route exact path="/" component={Home} />
-//       <Route path="/about" component={AboutPage} />
-//       <Route path="/cart" component={Cart} />
-//       <Route exact path="/books" component={BooksContainer} />
-//       <Route path="/books/:id" component={BookDetails} />
-//       <Route path="*" component={NotFound} />
-//     </Switch>
-//     <Footer />
-//   </div>
-// </Router>
