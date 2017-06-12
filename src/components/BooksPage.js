@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 import initialState from '../redux/initialState'
+import getFormattedBookPrice from '../utilities/main'
 
 const BooksPage = () => {
   const books = initialState.books
@@ -15,7 +16,8 @@ const BooksPage = () => {
               <div className='book' key={i}>
                 <p><span className='booktitle'>{book.title}</span> <span className='bookyear'>({book.year})</span></p>
                 <img src={book.cover} alt={`Cover of ${book.title}`}></img>
-                <Link to="#">Add to cart</Link>
+                <Link to={`/books/${book.id}`} className="details-link">Details</Link>
+                <Link to="#"><strong><span className='price'>{getFormattedBookPrice(book.price)}</span> - Add to cart</strong></Link>
               </div>
             )
           })
