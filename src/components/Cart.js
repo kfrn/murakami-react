@@ -17,11 +17,9 @@ const Cart = () => {
   return (
     <div className="container">
       <h3>Cart</h3>
-      <table className='cart'>
-        <tbody>
-          {getCartItems()}
-        </tbody>
-      </table>
+      <div className='cart'>
+        {getCartItems()}
+      </div>
       {getTotalCost()}
     </div>
   );
@@ -40,13 +38,13 @@ function getCartItems() {
     return cartContents.map((cartItem, i) => {
       const bookDetails = getBookInfo(cartItem.bookID)
       return(
-        <tr key={i}>
-          <td className='cart-book-cover'><img src={bookDetails.cover} alt={`Cover of ${bookDetails.title}`}></img></td>
-          <td className='cart-book-name'><Link to={`/books/${cartItem.bookID}`}>{bookDetails.title}</Link></td>
-          <td className='quantity'>{cartItem.quantity}</td>
-          <td className='price'><strong>{getFormattedBookPrice(bookDetails.price)}</strong></td>
-          <td className='add-remove'><button className='cart-button'>Add</button><button className='cart-button'>Remove</button></td>
-        </tr>
+        <div className='cart-item' key={i}>
+          <div className='cart-book-cover'><img src={bookDetails.cover} alt={`Cover of ${bookDetails.title}`}></img></div>
+          <div className='cart-book-name'><Link to={`/books/${cartItem.bookID}`}>{bookDetails.title}</Link></div>
+          <div className='quantity'>{cartItem.quantity}</div>
+          <div className='cart-price'><strong>{getFormattedBookPrice(bookDetails.price)}</strong></div>
+          <div className='add-remove'><button className='cart-button'>Add</button><br/><button className='cart-button'>Remove</button></div>
+        </div>
       )
     })
   }

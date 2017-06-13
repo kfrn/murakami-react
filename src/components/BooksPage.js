@@ -17,7 +17,7 @@ const BooksPage = () => {
                 <p><span className='booktitle'>{book.title}</span> <span className='bookyear'>({book.year})</span></p>
                 <img src={book.cover} alt={`Cover of ${book.title}`}></img>
                 <Link to={`/books/${book.id}`} className="details-link">Details</Link>
-                <Link to="#"><strong><span className='price'>{getFormattedBookPrice(book.price)}</span> - Add to cart</strong></Link>
+                <Link to="#"><strong><span className='book-price'>{getFormattedBookPrice(book.price)}</span> - Add to cart</strong></Link>
               </div>
             )
           })
