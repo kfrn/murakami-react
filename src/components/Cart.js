@@ -1,13 +1,10 @@
 import React from 'react';
-import initialState from '../redux/initialState';
-import getFormattedBookPrice from '../utilities/main';
 import { Link } from 'react-router-dom';
 
-const cartContents = [
-  { bookID: 4, quantity: 1},
-  { bookID: 6, quantity: 4},
-  { bookID: 8, quantity: 2}
-]
+import initialState from '../redux/initialState';
+import getFormattedBookPrice from '../utilities/main';
+
+const cartContents = initialState.cart
 
 function getBookInfo(bookID) {
   return initialState.books.filter(book => book.id === bookID)[0]

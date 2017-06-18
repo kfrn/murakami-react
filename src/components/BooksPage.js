@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom'
 import initialState from '../redux/initialState'
 import getFormattedBookPrice from '../utilities/main'
 
-const BooksPage = () => {
+const BooksPage = (props) => {
   const books = initialState.books
+
+  console.log(props)
 
   return (
     <div className="container">

@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// TODO: change image from landscape to portrait on phone (ditto with 404 page)
-
 const Home = () => {
   return (
     <div className="container">
