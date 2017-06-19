@@ -7,9 +7,8 @@ const reducer = (state = initialState, { type, payload = {} }) => {
     case 'INIT':
       return newState
       break;
-      
+
     default:
-      // console.log(newState);
       return newState
   }
 }

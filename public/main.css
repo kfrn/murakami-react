@@ -22,8 +22,22 @@ h3 {
   max-width: 100%;
 }
 
+@media only screen and (min-width: 600px) {
+  #root {
+    max-width: 70%;
+    margin: auto;
+  }
+}
+
 .container {
   margin: 0 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+  }
 }
 
 h2 {
@@ -51,6 +65,15 @@ img {
 
 .desktop {
   display: none;
+}
+
+@media only screen and (min-width: 600px) {
+  .desktop {
+    display: inline;
+  }
+  .mobile {
+    display: none;
+  }
 }
 
 /* NAV BAR */
@@ -118,6 +141,13 @@ footer a {
   margin: 1em auto;
 }
 
+@media only screen and (min-width: 600px) {
+  .portrait {
+    max-width: 60%;
+    margin: 2rem auto;
+  }
+}
+
 /* BOOKS PAGE */
 
 #books-container {
@@ -137,6 +167,18 @@ footer a {
   justify-content: space-between;
   margin: 1%;
   width: 99%;
+}
+
+@media only screen and (min-width: 600px) {
+  .book {
+    width: 48%;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .book {
+    width: 23%;
+  }
 }
 
 .book > p {
@@ -173,12 +215,34 @@ footer a {
   padding: 1em;
 }
 
+@media only screen and (min-width: 600px) {
+  .book-info {
+    display: inline-block;
+    padding: 0.5em 1em 1.5em 1em;
+    max-width: 40%;
+  }
+  .book-synopsis {
+    border: 1px solid #FF00CC;
+    border-radius: 8px;
+    display: inline-block;
+    padding: 1em;
+    max-width: 60%;
+  }
+  .single-book {
+    margin-top: 1.5em;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
 .book-cover-image {
   margin-bottom: 2em;
 }
 
 .book-properties {
   text-align: center;
+  font-size: 0.9em;
 }
 
 .emphasis {
@@ -200,6 +264,18 @@ footer a {
   font-size: 0.8em;
   margin-bottom: 2em;
   max-width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  .cart {
+    font-size: 0.95em;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .cart {
+    font-size: 1em;
+  }
 }
 
 .cart-link {
@@ -255,60 +331,4 @@ footer a {
 
 .total {
   text-align: right;
-}
-
-/* MEDIA QUERIES */
-
-@media only screen and (min-width: 600px) {
-  #root {
-    max-width: 70%;
-    margin: auto;
-  }
-  .book {
-    width: 48%;
-  }
-  .portrait {
-    max-width: 60%;
-    margin: 2rem auto;
-  }
-  .container {
-    max-width: 100%;
-    margin: 0 auto;
-  }
-  .cart {
-    font-size: 0.95em;
-  }
-  .desktop {
-    display: inline;
-  }
-  .mobile {
-    display: none;
-  }
-
-
-@media only screen and (min-width: 960px) {
-  .book {
-    width: 23%;
-  }
-  .single-book {
-    margin-top: 1.5em;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  .book-info {
-    display: inline-block;
-    padding: 0.5em 1em 1.5em 1em;
-    max-width: 40%;
-  }
-  .book-synopsis {
-    border: 1px solid #FF00CC;
-    border-radius: 8px;
-    display: inline-block;
-    padding: 1em;
-    max-width: 60%;
-  }
-  .cart {
-    font-size: 1em;
-  }
 }

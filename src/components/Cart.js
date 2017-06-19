@@ -1,30 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-import initialState from '../redux/initialState';
-import getFormattedBookPrice from '../utilities/main';
+import { getFormattedBookPrice } from '../utilities/main';
+import { getBookInfo } from '../utilities/main';
+import CartItem from './CartItem'
 
-const cartContents = initialState.cart
-
-function getBookInfo(bookID) {
-  return initialState.books.filter(book => book.id === bookID)[0]
-}
-
-const Cart = () => {
+const Cart = (props) => {
   return (
     <div className="container">
       <h3>Cart</h3>
       <div className='cart'>
-        {getCartItems()}
+        {getCartItems(props.cart, props.books)}
       </div>
-      {getTotalCost()}
+      {getTotalCost(props.cart, props.books)}
     </div>
   );
 }
 
 export default Cart;
 
-function getCartItems() {
+function getCartItems(cartContents, books) {
   if (cartContents.length === 0) {
     return(
       <div className='empty'>
@@ -33,24 +27,18 @@ function getCartItems() {
     )
   } else {
     return cartContents.map((cartItem, i) => {
-      const bookDetails = getBookInfo(cartItem.bookID)
+      const bookDetails = getBookInfo(cartItem.bookID, books)
       return(
-        <div className='cart-item' key={i}>
-          <div className='cart-book-cover'><img src={bookDetails.cover} alt={`Cover of ${bookDetails.title}`}></img></div>
-          <div className='cart-book-name'><Link to={`/books/${cartItem.bookID}`}>{bookDetails.title}</Link></div>
-          <div className='quantity'>{cartItem.quantity}</div>
-          <div className='cart-price'><strong>{getFormattedBookPrice(bookDetails.price)}</strong></div>
-          <div className='add-remove'><button className='cart-button'>Add</button><br/><button className='cart-button'>Remove</button></div>
-        </div>
+        <CartItem bookDetails={bookDetails} cartItem={cartItem} key={i}/>
       )
     })
   }
 }
 
-function getTotalCost() {
+function getTotalCost(cartContents, books) {
   if (cartContents.length !== 0) {
     const costPerBook = cartContents.map(cartItem => {
-      const bookDetails = getBookInfo(cartItem.bookID)
+      const bookDetails = getBookInfo(cartItem.bookID, books)
       return (bookDetails.price * cartItem.quantity)
     })
     const totalCost = costPerBook.reduce((a, b) => a + b)

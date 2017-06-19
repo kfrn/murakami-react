@@ -6,9 +6,9 @@ import NavBar from './components/shared/NavBar'
 import NotFound from './components/NotFound'
 import Home from './components/Home'
 import About from './components/About'
-import BooksPage from './components/BooksPage'
-import Cart from './components/Cart'
-import SingleBook from './components/SingleBook'
+import BooksPageContainer from './containers/BooksPageContainer'
+import CartContainer from './containers/CartContainer'
+import SingleBookPageContainer from './containers/SingleBookPageContainer'
 
 const App = () => {
   return (
@@ -19,9 +19,9 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route path="/home" component={Home} />
           <Route path="/about" component={About} />
-          <Route exact path="/books" component={BooksPage} />
-          <Route exact path="/books/:id" component={SingleBook} />
-          <Route path="/cart" component={Cart} />
+          <Route exact path="/books" component={BooksPageContainer} />
+          <Route exact path="/books/:id" component={SingleBookPageContainer} />
+          <Route path="/cart" component={CartContainer} />
           <Route path="*" component={NotFound} />
         </Switch>
         <Footer />
