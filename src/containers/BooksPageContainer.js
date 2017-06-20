@@ -4,7 +4,8 @@ import BooksPage from '../components/BooksPage'
 
 const mapStateToProps = (state) => {
   return {
-    books: state.books
+    books: state.books,
+    cart: state.cart
   }
 }
 
