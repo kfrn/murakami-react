@@ -1,20 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 
-const CartStatus = ({inCart, page}) => {
+import { addToCart } from '../actions/actionCreators'
+
+const CartStatus = ({dispatch, inCart, page, bookID}) => {
   if (inCart) {
-    return(<Link to='/cart' className='in-cart'>Already in cart</Link>)
+    return(
+      <button className='main-page book-in-cart'>Already in cart</button>
+    )
   } else if (page === 'singleBook') {
     return(
-      <span className='cart-link add-to-cart'>
-        <Link to='#'>Add to cart</Link>
-      </span>
+      <button className='cart-link add-to-cart' onClick={() => dispatch(addToCart(bookID))}>Add to cart</button>
     )
   } else {
     return(
-      <span className='cart-link'>
-        <Link to='#'>Add to cart</Link>
-      </span>
+      <button className='main-page' onClick={() => dispatch(addToCart(bookID))}>Add to cart</button>
     )
   }
 }

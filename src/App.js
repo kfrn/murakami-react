@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Footer from './components/shared/Footer'
-import NavBar from './components/shared/NavBar'
+import NavContainer from './containers/NavContainer'
 import NotFound from './components/NotFound'
 import Home from './components/Home'
 import About from './components/About'
@@ -14,7 +14,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="App">
-        <NavBar />
+        <NavContainer />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/home" component={Home} />

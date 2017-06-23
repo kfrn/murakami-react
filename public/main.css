@@ -58,7 +58,7 @@ a:hover {
 }
 
 img {
-  max-width: 100%;
+  max-width: 80%;
   display: block;
   margin: 0 auto;
 }
@@ -74,6 +74,10 @@ img {
   .mobile {
     display: none;
   }
+}
+
+button {
+  border-style: none;
 }
 
 /* NAV BAR */
@@ -202,12 +206,36 @@ footer a {
 .book-price {
   color: black;
   font-weight: bold;
+  font-size: 1.2em;
 }
 
-.in-cart {
+.main-page {
+  background-color: #ddc0d8;
+  border-radius: 7px;
+  border-style: none;
+  color: #2D006A;
+  font-weight: bold;
+  padding: 0.7em;
+  margin: 0.2em;
+  margin-left: 0.7em;
+}
+
+.main-page:hover {
+  color: #FF00CC;
+}
+
+.book-in-cart {
   color: black;
+  background-color: #f2deee;
   font-style: italic;
-  font-weight: normal;
+}
+
+.book-in-cart:hover {
+  color: black;
+}
+
+.details-link {
+  padding: 0.3em;
 }
 
 /* SINGLE BOOK PAGE */
@@ -239,7 +267,7 @@ footer a {
     margin-top: 1.5em;
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
   }
 }
 
@@ -262,8 +290,9 @@ footer a {
   border-radius: 7px;
   color: black;
   font-weight: bold;
-  padding: 1em;
+  padding: 0.7em;
   margin: auto 0;
+  margin-left: 0.5em;
 }
 
 /* CART */

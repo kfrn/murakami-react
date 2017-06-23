@@ -1,7 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const NavBar = () => {
+const NavBar = ({cart}) => {
+  const itemsInCart = cart.length
   return (
     <nav className="navbar navbar-default">
       <div className="container-fluid">
@@ -18,7 +19,7 @@ const NavBar = () => {
           <ul className="nav navbar-nav">
             <li><NavLink to="/about" activeStyle={{color: '#001324', backgroundColor: '#f2deee'}}>About</NavLink> </li>
             <li><NavLink to="/books" activeStyle={{color: '#001324', backgroundColor: '#f2deee'}}>Books</NavLink> </li>
-            <li><NavLink to="/cart" activeStyle={{color: '#001324', backgroundColor: '#f2deee'}}>Cart</NavLink> </li>
+            <li><NavLink to="/cart" activeStyle={{color: '#001324', backgroundColor: '#f2deee'}}>Cart <strong>({itemsInCart})</strong></NavLink> </li>
           </ul>
         </div>
       </div>

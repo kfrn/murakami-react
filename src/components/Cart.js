@@ -9,7 +9,7 @@ const Cart = (props) => {
     <div className="container">
       <h3>Cart</h3>
       <div className='cart'>
-        {getCartItems(props.cart, props.books)}
+        {getCartItems(props.cart, props.books, props.dispatch)}
       </div>
       {getTotalCost(props.cart, props.books)}
     </div>
@@ -18,7 +18,7 @@ const Cart = (props) => {
 
 export default Cart;
 
-function getCartItems(cartContents, books) {
+function getCartItems(cartContents, books, dispatch) {
   if (cartContents.length === 0) {
     return(
       <div className='empty'>
@@ -29,7 +29,7 @@ function getCartItems(cartContents, books) {
     return cartContents.map((cartItem, i) => {
       const bookDetails = getBookInfo(cartItem.bookID, books)
       return(
-        <CartItem bookDetails={bookDetails} cartItem={cartItem} key={i}/>
+        <CartItem bookDetails={bookDetails} cartItem={cartItem} key={i} dispatch={dispatch}/>
       )
     })
   }
