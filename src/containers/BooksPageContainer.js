@@ -1,6 +1,4 @@
-import { connect } from 'react-redux'
-import BooksPage from '../components/BooksPage'
+import { connect } from 'react-redux';
+import BooksPage from '../components/BooksPage';
 
-export default connect(
-  state => state
-)(BooksPage)
+export default connect(state => state)(BooksPage);

@@ -1,34 +1,60 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-import CartStatus from './CartStatus'
-import { getFormattedBookPrice, getBookInfo, isBookinCart } from '../utilities/main';
+import CartStatus from './CartStatus';
+import {
+  getFormattedBookPrice,
+  getBookInfo,
+  isBookinCart
+} from '../utilities/main';
 
-const SingleBook = (props) => {
-  const books = props.books
-  const bookID = parseInt(props.match.params.id, 10)
-  const bookDetails = getBookInfo(bookID, books)
+const SingleBook = props => {
+  const books = props.books;
+  const bookID = parseInt(props.match.params.id, 10);
+  const bookDetails = getBookInfo(bookID, books);
   const inCart = isBookinCart(bookDetails, props.cart);
-  const dispatch = props.dispatch
+  const dispatch = props.dispatch;
   return (
     <div className="container">
       <h3>{bookDetails.title}</h3>
       <div className="single-book">
         <div className="book-info">
-          <Link to="#"><img src={bookDetails.cover} alt={`Cover of ${bookDetails.title}`} className="book-cover-image"></img></Link>
+          <Link to="#">
+            <img
+              src={bookDetails.cover}
+              alt={`Cover of ${bookDetails.title}`}
+              className="book-cover-image"
+            />
+          </Link>
           <div className="book-properties">
             <p><span className="emphasis">Year</span> {bookDetails.year}</p>
-            <p><span className="emphasis">Original title (Japanese)</span> <br/>{bookDetails.titleJP}</p>
-            <p><span className="emphasis">Original title (Romaji)</span> <br/>{bookDetails.titleRomaji}</p>
+            <p>
+              <span className="emphasis">Original title (Japanese)</span> <br />
+              {bookDetails.titleJP}
+            </p>
+            <p>
+              <span className="emphasis">Original title (Romaji)</span> <br />
+              {bookDetails.titleRomaji}
+            </p>
           </div>
         </div>
-        <div className='book-synopsis'>
+        <div className="book-synopsis">
           <p className="synopsis">{bookDetails.synopsis}</p>
-          <p className="cart-link"><span className='book-price'>{getFormattedBookPrice(bookDetails.price)}</span> <CartStatus inCart={inCart} page='singleBook' dispatch={dispatch} bookID={bookID}/></p>
+          <p className="cart-link">
+            <span className="book-price">
+              {getFormattedBookPrice(bookDetails.price)}
+            </span>
+            <CartStatus
+              inCart={inCart}
+              page="singleBook"
+              dispatch={dispatch}
+              bookID={bookID}
+            />
+          </p>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default SingleBook;

@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Footer from './components/shared/Footer'
-import NavContainer from './containers/NavContainer'
-import NotFound from './components/NotFound'
-import Home from './components/Home'
-import About from './components/About'
-import BooksPageContainer from './containers/BooksPageContainer'
-import CartContainer from './containers/CartContainer'
-import SingleBookPageContainer from './containers/SingleBookPageContainer'
+import Footer from './components/shared/Footer';
+import NavContainer from './containers/NavContainer';
+import NotFound from './components/NotFound';
+import Home from './components/Home';
+import About from './components/About';
+import BooksPageContainer from './containers/BooksPageContainer';
+import CartContainer from './containers/CartContainer';
+import SingleBookPageContainer from './containers/SingleBookPageContainer';
 
 const App = () => {
   return (
@@ -28,6 +28,6 @@ const App = () => {
       </div>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

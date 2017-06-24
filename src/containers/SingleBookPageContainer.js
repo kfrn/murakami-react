@@ -1,7 +1,5 @@
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 
-import SingleBookPage from '../components/SingleBookPage'
+import SingleBookPage from '../components/SingleBookPage';
 
-export default connect(
-  state => state
-)(SingleBookPage)
+export default connect(state => state)(SingleBookPage);
