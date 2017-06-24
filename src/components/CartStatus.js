@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { addToCart } from '../actions/actionCreators'
 
@@ -19,3 +20,10 @@ const CartStatus = ({dispatch, inCart, page, bookID}) => {
 }
 
 export default CartStatus;
+
+CartStatus.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  inCart: PropTypes.bool.isRequired,
+  page: PropTypes.string.isRequired,
+  bookID: PropTypes.number.isRequired
+};

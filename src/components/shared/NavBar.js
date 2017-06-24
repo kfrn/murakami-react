@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const NavBar = ({cart}) => {
   const itemsInCart = cart.length
@@ -28,3 +29,7 @@ const NavBar = ({cart}) => {
 }
 
 export default NavBar;
+
+NavBar.propTypes = {
+  cart: PropTypes.array.isRequired,
+};

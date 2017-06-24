@@ -16,7 +16,6 @@ const reducer = (state = initialState, { type, payload = {} }) => {
 
     case 'REMOVE_FROM_CART':
       newState.cart.splice(bookIndex, 1)
-      console.log(`remove book ${payload}`)
       return newState
 
     default:

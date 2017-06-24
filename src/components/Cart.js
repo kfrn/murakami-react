@@ -1,22 +1,29 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { getFormattedBookPrice } from '../utilities/main';
 import { getBookInfo } from '../utilities/main';
 import CartItem from './CartItem'
 
-const Cart = (props) => {
+const Cart = ({cart, books, dispatch}) => {
   return (
     <div className="container">
       <h3>Cart</h3>
       <div className='cart'>
-        {getCartItems(props.cart, props.books, props.dispatch)}
+        {getCartItems(cart, books, dispatch)}
       </div>
-      {getTotalCost(props.cart, props.books)}
+      {returnTotal(cart, books)}
     </div>
   );
 }
 
 export default Cart;
+
+Cart.propTypes = {
+  books: PropTypes.array.isRequired,
+  cart: PropTypes.array.isRequired,
+  dispatch: PropTypes.func.isRequired,
+};
 
 function getCartItems(cartContents, books, dispatch) {
   if (cartContents.length === 0) {
@@ -35,13 +42,18 @@ function getCartItems(cartContents, books, dispatch) {
   }
 }
 
-function getTotalCost(cartContents, books) {
-  if (cartContents.length !== 0) {
-    const costPerBook = cartContents.map(cartItem => {
-      const bookDetails = getBookInfo(cartItem.bookID, books)
-      return (bookDetails.price * cartItem.quantity)
-    })
-    const totalCost = costPerBook.reduce((a, b) => a + b)
+function calculateTotalCost(cartContents, books) {
+  const costPerBook = cartContents.map(cartItem => {
+    const bookDetails = getBookInfo(cartItem.bookID, books)
+    return (bookDetails.price * cartItem.quantity)
+  })
+  const totalCost = costPerBook.reduce((a, b) => a + b)
+  return totalCost
+}
+
+function returnTotal(cart, books) {
+  if (cart.length !== 0) {
+    const totalCost = calculateTotalCost(cart, books)
     return(
       <h4 className='total'>Total cost is <strong>{getFormattedBookPrice(totalCost)}</strong>.</h4>
     )

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
 import CartStatus from './CartStatus'
 import { getFormattedBookPrice } from '../utilities/main';
@@ -20,3 +21,9 @@ const Book = ({bookInfo, inCart, dispatch}) => {
 }
 
 export default Book
+
+Book.propTypes = {
+  bookInfo: PropTypes.object.isRequired,
+  inCart: PropTypes.bool.isRequired,
+  dispatch: PropTypes.func.isRequired,
+};
