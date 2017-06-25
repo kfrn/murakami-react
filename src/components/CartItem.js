@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { incrementQuantity } from '../actions/actionCreators';
+import { decrementQuantity } from '../actions/actionCreators';
 import { removeFromCart } from '../actions/actionCreators';
 import { getFormattedBookPrice } from '../utilities/main';
 
@@ -27,6 +28,17 @@ const CartItem = ({ bookDetails, cartItem, dispatch }) => {
           Add another
         </button>
         <br />
+        {cartItem.quantity > 1 &&
+          <div>
+            <button
+              className="cart-button"
+              onClick={() => dispatch(decrementQuantity(bookDetails.id))}
+              >
+              Decrement count
+            </button>
+            <br />
+          </div>
+        }
         <button
           className="cart-button"
           onClick={() => dispatch(removeFromCart(bookDetails.id))}

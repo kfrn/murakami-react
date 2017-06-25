@@ -12,6 +12,13 @@ export function incrementQuantity(bookID) {
   };
 }
 
+export function decrementQuantity(bookID) {
+  return {
+    type: 'DECREMENT_QUANTITY',
+    payload: bookID
+  };
+}
+
 export function removeFromCart(bookID) {
   return {
     type: 'REMOVE_FROM_CART',
