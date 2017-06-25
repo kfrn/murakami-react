@@ -12,7 +12,7 @@ const NavBar = ({ cart }) => {
             type="button"
             className="navbar-toggle collapsed"
             data-toggle="collapse"
-            data-target="#bs-example-navbar-collapse-1"
+            data-target="#bookshop-navbar"
             aria-expanded="false"
           >
             <span className="sr-only">Toggle navigation</span>
@@ -24,32 +24,20 @@ const NavBar = ({ cart }) => {
             Murakami books
           </NavLink>
         </div>
-        <div
-          className="collapse navbar-collapse navbar-right"
-          id="bs-example-navbar-collapse-1"
-        >
+        <div className="collapse navbar-collapse navbar-right" id="bookshop-navbar">
           <ul className="nav navbar-nav">
             <li>
-              <NavLink
-                to="/about"
-                activeStyle={{ color: '#001324', backgroundColor: '#f2deee' }}
-              >
+              <NavLink to="/about" activeStyle={{ color: '#001324', backgroundColor: '#f2deee' }}>
                 About
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/books"
-                activeStyle={{ color: '#001324', backgroundColor: '#f2deee' }}
-              >
+              <NavLink to="/books" activeStyle={{ color: '#001324', backgroundColor: '#f2deee' }}>
                 Books
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/cart"
-                activeStyle={{ color: '#001324', backgroundColor: '#f2deee' }}
-              >
+              <NavLink to="/cart" activeStyle={{ color: '#001324', backgroundColor: '#f2deee' }}>
                 Cart <strong>({itemsInCart})</strong>
               </NavLink>
             </li>

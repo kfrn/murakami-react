@@ -112,6 +112,10 @@ button {
   background-color: #f2deee;
 }
 
+.navbar-nav {
+  margin: 0;
+}
+
 /* FOOTER */
 
 footer {
