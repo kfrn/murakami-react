@@ -14,6 +14,13 @@ const reducer = (state = initialState, { type, payload = {} }) => {
       newState.cart[bookIndex].quantity += 1;
       return newState;
 
+    case 'DECREMENT_QUANTITY':
+      newState.cart[bookIndex].quantity -= 1;
+      if (newState.cart[bookIndex].quantity < 1) {
+        newState.cart.splice(bookIndex, 1);
+      }
+      return newState;
+
     case 'REMOVE_FROM_CART':
       newState.cart.splice(bookIndex, 1);
       return newState;
