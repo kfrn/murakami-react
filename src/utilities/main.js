@@ -1,5 +1,5 @@
 export function getFormattedBookPrice(price) {
-  return `$${price}.00`;
+  return `$${price.toFixed(2)}`;
 }
 
 export function getBookInfo(bookID, books) {
@@ -7,8 +7,5 @@ export function getBookInfo(bookID, books) {
 }
 
 export function isBookinCart(book, cart) {
-  const inCart = cart.map(cartItem => {
-    return book.id === cartItem.bookID;
-  });
-  return inCart.includes(true);
+  return cart.some(cartItem => cartItem.bookID === book.id)
 }
