@@ -48,12 +48,11 @@ function getCartItems(cartContents, books, dispatch) {
 }
 
 function calculateTotalCost(cartContents, books) {
-  const costPerBook = cartContents.map(cartItem => {
+  return cartContents.reduce((acc, cartItem) => {
     const bookDetails = getBookInfo(cartItem.bookID, books);
-    return bookDetails.price * cartItem.quantity;
-  });
-  const totalCost = costPerBook.reduce((a, b) => a + b);
-  return totalCost;
+    const bookPrice = bookDetails.price * cartItem.quantity
+    return acc + bookPrice;
+  }, 0)
 }
 
 function returnTotal(cart, books) {

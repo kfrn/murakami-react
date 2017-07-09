@@ -1,19 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import CartStatus from './CartStatus';
+import CartStatusContainer from '../containers/CartStatusContainer';
 import {
   getFormattedBookPrice,
   getBookInfo,
-  isBookinCart
 } from '../utilities/main';
 
 const SingleBook = props => {
   const books = props.books;
   const bookID = parseInt(props.match.params.id, 10);
   const bookDetails = getBookInfo(bookID, books);
-  const inCart = isBookinCart(bookDetails, props.cart);
-  const dispatch = props.dispatch;
   return (
     <div className="container">
       <h3>{bookDetails.title}</h3>
@@ -44,12 +41,7 @@ const SingleBook = props => {
             <span className="book-price">
               {getFormattedBookPrice(bookDetails.price)}
             </span>
-            <CartStatus
-              inCart={inCart}
-              page="singleBook"
-              dispatch={dispatch}
-              bookID={bookID}
-            />
+            <CartStatusContainer bookID={bookID}/>
           </p>
         </div>
       </div>

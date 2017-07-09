@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Book from './Book';
-import { isBookinCart } from '../utilities/main';
 
 const BooksPage = ({ books, cart, dispatch }) => {
   return (
@@ -14,8 +13,6 @@ const BooksPage = ({ books, cart, dispatch }) => {
             <Book
               key={i}
               bookInfo={book}
-              inCart={isBookinCart(book, cart)}
-              dispatch={dispatch}
             />
           );
         })}
