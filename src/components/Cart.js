@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { getFormattedBookPrice } from '../utilities/main';
-import { getBookInfo } from '../utilities/main';
-import CartItem from './CartItem';
+import { getFormattedBookPrice, getBookInfo } from '../utilities/main';
+import CartItemContainer from '../containers/CartItemContainer';
 
-const Cart = ({ cart, books, dispatch }) => {
+const Cart = ({ cart, books }) => {
   return (
     <div className="container">
       <h3>Cart</h3>
       <div className="cart">
-        {getCartItems(cart, books, dispatch)}
+        {getCartItems(cart)}
       </div>
       {returnTotal(cart, books)}
     </div>
@@ -25,7 +24,7 @@ Cart.propTypes = {
   dispatch: PropTypes.func.isRequired
 };
 
-function getCartItems(cartContents, books, dispatch) {
+function getCartItems(cartContents) {
   if (cartContents.length === 0) {
     return (
       <div className="empty">
@@ -34,13 +33,10 @@ function getCartItems(cartContents, books, dispatch) {
     );
   } else {
     return cartContents.map((cartItem, i) => {
-      const bookDetails = getBookInfo(cartItem.bookID, books);
       return (
-        <CartItem
-          bookDetails={bookDetails}
+        <CartItemContainer
           cartItem={cartItem}
           key={i}
-          dispatch={dispatch}
         />
       );
     });
