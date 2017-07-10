@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import { getFormattedBookPrice } from '../utilities/main';
 import { getBookInfo } from '../utilities/main';
-// import CartItem from './CartItem';
 import CartItemContainer from '../containers/CartItemContainer';
 
 const Cart = ({ cart, books }) => {

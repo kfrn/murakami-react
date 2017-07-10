@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { addToCart } from '../actions/actionCreators';
 
-const CartStatus = ({ bookID, cart, dispatch }) => {
+const AddToCartButton = ({ bookID, cart, dispatch }) => {
   const inCart = cart.some(cartItem => cartItem.bookID === bookID)
 
   if (inCart) {
@@ -18,9 +18,9 @@ const CartStatus = ({ bookID, cart, dispatch }) => {
   }
 };
 
-export default CartStatus;
+export default AddToCartButton;
 
-CartStatus.propTypes = {
+AddToCartButton.propTypes = {
   dispatch: PropTypes.func.isRequired,
   bookID: PropTypes.number.isRequired,
   cart: PropTypes.array.isRequired

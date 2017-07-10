@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import CartStatusContainer from '../containers/CartStatusContainer';
+import AddToCartButtonContainer from '../containers/AddToCartButtonContainer';
 import { getFormattedBookPrice } from '../utilities/main';
 
 const Book = ({bookInfo}) => {
@@ -20,7 +20,7 @@ const Book = ({bookInfo}) => {
       </Link>
       <strong>
         <p className="book-price">{getFormattedBookPrice(bookInfo.price)}</p>
-        <CartStatusContainer bookID={bookID}/>
+        <AddToCartButtonContainer bookID={bookID}/>
       </strong>
     </div>
   );
