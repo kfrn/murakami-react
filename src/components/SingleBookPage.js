@@ -2,10 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import CartStatusContainer from '../containers/CartStatusContainer';
-import {
-  getFormattedBookPrice,
-  getBookInfo,
-} from '../utilities/main';
+import { getFormattedBookPrice, getBookInfo } from '../utilities/main';
 
 const SingleBook = props => {
   const books = props.books;
