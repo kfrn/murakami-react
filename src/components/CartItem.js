@@ -2,12 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { incrementQuantity } from '../actions/actionCreators';
-import { decrementQuantity } from '../actions/actionCreators';
-import { removeFromCart } from '../actions/actionCreators';
-import { getFormattedBookPrice } from '../utilities/main';
+import { incrementQuantity, decrementQuantity, removeFromCart } from '../actions/actionCreators';
+import { getBookInfo, getFormattedBookPrice } from '../utilities/main';
 
-const CartItem = ({ bookDetails, cartItem, dispatch }) => {
+const CartItem = ({ books, cartItem, dispatch }) => {
+  const bookDetails = getBookInfo(cartItem.bookID, books);
   return (
     <div className="cart-item">
       <div className="cart-book-cover">
