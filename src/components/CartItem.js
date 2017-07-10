@@ -52,7 +52,7 @@ const CartItem = ({ books, cartItem, dispatch }) => {
 export default CartItem;
 
 CartItem.propTypes = {
-  bookDetails: PropTypes.object.isRequired,
+  books: PropTypes.array.isRequired,
   cartItem: PropTypes.object.isRequired,
   dispatch: PropTypes.func.isRequired
 };

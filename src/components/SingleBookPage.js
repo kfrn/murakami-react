@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Parser from 'html-react-parser';
 
 import AddToCartButtonContainer from '../containers/AddToCartButtonContainer';
 import { getFormattedBookPrice, getBookInfo } from '../utilities/main';
@@ -8,6 +9,9 @@ const SingleBook = props => {
   const books = props.books;
   const bookID = parseInt(props.match.params.id, 10);
   const bookDetails = getBookInfo(bookID, books);
+  const synopsisParagraph = React.createElement('p', {className: "synopsis"},
+        Parser(bookDetails.synopsis))
+
   return (
     <div className="container">
       <h3>{bookDetails.title}</h3>
@@ -33,7 +37,7 @@ const SingleBook = props => {
           </div>
         </div>
         <div className="book-synopsis">
-          <p className="synopsis">{bookDetails.synopsis}</p>
+          {synopsisParagraph}
           <p className="cart-link">
             <span className="book-price">
               {getFormattedBookPrice(bookDetails.price)}
